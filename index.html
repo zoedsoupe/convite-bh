@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jhujubinha, bora pra BH?</title>
+  <meta name="description" content="convite: oito dias de duas minas descobrindo Minas!">
+  <meta property="og:title" content="jhujubinha, bora pra BH?">
+  <meta property="og:description"
+    content="oito dias de duas minas descobrindo Minas: comida gostosa, turismo de museu, parques e muito amor.">
+  <meta property="og:image" content="images/cafe.jpg">
+  <meta name="theme-color" content="#12392b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fdfbf7;
+      --ink: #12392b;
+      --green: #2e6b4f;
+      --sage: #7fb08a;
+      --mint: #dcead9;
+      --pink: #ffe7ff;
+      --pink-strong: #fdb5fe;
+      --lilac: #efe5ff;
+      --lilac-deep: #ceb3ff;
+      --radius-main: 2rem;
+      --radius-small: 1rem;
+      --radius-round: 100vw;
+      --ease: cubic-bezier(.625, .05, 0, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overscroll-behavior: none
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--pink-strong);
+      color: var(--ink)
+    }
+
+    img::selection {
+      background: transparent
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    h1,
+    h2,
+    .serif {
+      font-family: "Fraunces", serif;
+      letter-spacing: -.02em;
+      line-height: 1;
+      font-weight: 600
+    }
+
+    em {
+      font-style: italic;
+      font-weight: 400
+    }
+
+    .wrap {
+      width: min(1060px, 92vw);
+      margin-inline: auto
+    }
+
+    section {
+      padding: clamp(3.5rem, 8vw, 6.5rem) 0
+    }
+
+    .kicker {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0 5rem;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2
+    }
+
+    .hero h1 {
+      font-size: clamp(2.9rem, 9vw, 6.8rem);
+      margin: .9rem 0 1.1rem;
+    }
+
+    .hero h1 em {
+      color: var(--green)
+    }
+
+    .hero .sub {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      max-width: 34rem;
+      margin: 0 auto 1.6rem;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      justify-content: center;
+      max-width: 44rem;
+      margin: 0 auto
+    }
+
+    .pill {
+      border: 1.5px solid var(--ink);
+      border-radius: var(--radius-round);
+      padding: .42rem 1.05rem;
+      font-size: .85rem;
+      font-weight: 500;
+      background: var(--cream);
+      transition: transform .7s var(--ease), background .7s var(--ease);
+    }
+
+    .pill:nth-child(2) {
+      background: var(--pink)
+    }
+
+    .pill:nth-child(3) {
+      background: var(--lilac)
+    }
+
+    .pill:nth-child(4) {
+      background: var(--mint)
+    }
+
+    .pill:hover {
+      transform: translateY(-3px) rotate(-1deg)
+    }
+
+    .hero-cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3.2rem;
+      pointer-events: none;
+    }
+
+    .hero-cards figure {
+      position: relative;
+      width: clamp(220px, 36vw, 480px);
+      border-radius: var(--radius-main);
+      overflow: hidden;
+      box-shadow: 0 2.2rem 4rem -1.8rem rgba(18, 57, 43, .45);
+      transition: transform .7s var(--ease);
+      pointer-events: auto;
+    }
+
+    .hero-cards figure:first-child {
+      transform: rotate(-6deg);
+      margin-right: -2.5rem;
+      animation: float 4.6s ease-in-out infinite alternate
+    }
+
+    .hero-cards figure:last-child {
+      transform: rotate(6deg);
+      margin-left: -2.5rem;
+      animation: float 5.4s .6s ease-in-out infinite alternate
+    }
+
+    .hero-cards figure:first-child:hover {
+      transform: rotate(-3deg) scale(1.02)
+    }
+
+    .hero-cards figure:last-child:hover {
+      transform: rotate(3deg) scale(1.02)
+    }
+
+    .hero-cards img {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      width: 100%
+    }
+
+    .hero-cards figcaption {
+      position: absolute;
+      left: 1.1rem;
+      bottom: 1rem;
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--cream);
+      text-shadow: 0 1px 12px rgba(0, 0, 0, .55);
+    }
+
+    @keyframes float {
+      from {
+        translate: 0 -7px
+      }
+
+      to {
+        translate: 0 7px
+      }
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 1.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: .75rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    /* ---------- marquee ---------- */
+    .marquee {
+      background: var(--pink);
+      border-block: 1.5px solid var(--ink);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: .85rem 0;
+    }
+
+    .marquee div {
+      display: inline-block;
+      animation: slide 36s linear infinite;
+      font-family: "Fraunces", serif;
+      font-size: 1.15rem;
+    }
+
+    .marquee span {
+      margin: 0 1.1rem
+    }
+
+    @keyframes slide {
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* ---------- roteiro ---------- */
+    .roteiro {
+      background: var(--lilac)
+    }
+
+    .roteiro .intro {
+      max-width: 32rem;
+      margin: .9rem 0 2.8rem;
+      color: var(--green)
+    }
+
+    .roteiro h2,
+    .detalhes h2,
+    .galeria h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem)
+    }
+
+    .dias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .dia {
+      background: var(--cream);
+      border-radius: var(--radius-main);
+      padding: 1.7rem 1.6rem 1.5rem;
+      transition: transform .7s var(--ease), box-shadow .7s var(--ease);
+    }
+
+    .dia:hover {
+      transform: rotate(0deg) translateY(-4px) !important;
+      box-shadow: 0 1.4rem 2.6rem -1.6rem rgba(18, 57, 43, .35)
+    }
+
+    .dia:nth-child(4n+1) {
+      transform: rotate(-1.1deg)
+    }
+
+    .dia:nth-child(4n+2) {
+      transform: rotate(.8deg)
+    }
+
+    .dia:nth-child(4n+3) {
+      transform: rotate(-.6deg)
+    }
+
+    .dia:nth-child(4n+4) {
+      transform: rotate(1.2deg)
+    }
+
+    .dia .tag {
+      display: inline-block;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 1.5px solid var(--sage);
+      border-radius: var(--radius-round);
+      padding: .28rem .8rem;
+    }
+
+    .dia h3 {
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin: .8rem 0 .4rem;
+      letter-spacing: -.01em
+    }
+
+    .dia p {
+      font-size: .95rem;
+      color: #3c5347
+    }
+
+    /* ---------- galeria ---------- */
+    .galeria .grid {
+      margin-top: 2.8rem;
+      columns: 2;
+      column-gap: 1.4rem;
+    }
+
+    @media(min-width:760px) {
+      .galeria .grid {
+        columns: 3
+      }
+    }
+
+    .galeria figure {
+      break-inside: avoid;
+      margin-bottom: 1.4rem;
+      background: #fff;
+      padding: .7rem .7rem .9rem;
+      border-radius: var(--radius-small);
+      box-shadow: 0 1rem 2rem -1.4rem rgba(18, 57, 43, .35);
+      transition: transform .7s var(--ease);
+    }
+
+    .galeria figure:nth-child(odd) {
+      transform: rotate(-1.4deg)
+    }
+
+    .galeria figure:nth-child(even) {
+      transform: rotate(1.1deg)
+    }
+
+    .galeria figure:hover {
+      transform: rotate(0) scale(1.02)
+    }
+
+    .galeria img {
+      border-radius: .55rem;
+      width: 100%
+    }
+
+    .galeria figcaption {
+      padding: .65rem .3rem 0;
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* ---------- detalhes ---------- */
+    .detalhes {
+      background: var(--mint)
+    }
+
+    .detalhes ul {
+      list-style: none;
+      margin-top: 2.4rem;
+      max-width: 46rem
+    }
+
+    .detalhes li {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .15rem;
+      padding: 1.15rem 0;
+      border-top: 1px solid rgba(18, 57, 43, .25);
+    }
+
+    .detalhes li:last-child {
+      border-bottom: 1px solid rgba(18, 57, 43, .25)
+    }
+
+    @media(min-width:680px) {
+      .detalhes li {
+        grid-template-columns: 15rem 1fr;
+        gap: 1.5rem;
+        align-items: baseline
+      }
+    }
+
+    .detalhes strong {
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      letter-spacing: -.01em
+    }
+
+    .detalhes p {
+      font-size: .96rem;
+      color: #3c5347
+    }
+
+    /* ---------- final ---------- */
+    .final {
+      background: var(--ink);
+      color: var(--cream);
+      text-align: center;
+      padding: clamp(5rem, 12vw, 8.5rem) 0 clamp(3rem, 8vw, 5rem);
+    }
+
+    .final h2 {
+      font-size: clamp(3rem, 10vw, 7.2rem);
+      color: var(--pink);
+    }
+
+    .final h2 em {
+      color: var(--lilac-deep)
+    }
+
+    .final .resp {
+      max-width: 30rem;
+      margin: 1.6rem auto 0;
+      color: #cfe3d4;
+      font-size: 1.05rem;
+    }
+
+    .final .sign {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      margin-top: 2.6rem;
+      color: var(--pink-strong);
+    }
+
+    .final small {
+      display: block;
+      margin-top: 4rem;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    /* ---------- reveal ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease)
+    }
+
+    .reveal.on {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none
+      }
+
+      .hero-cards figure {
+        animation: none
+      }
+
+      .marquee div {
+        animation: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <h1>jhujubinha,<br><em>bora pra BH</em> comigo?</h1>
+      <p class="sub">oito dias de duas minas descobrindo Minas: com comida gostosa, turismo de museu, parques e muito
+        amor.</p>
+      <div class="pills">
+        <span class="pill">proposta: 8 dias</span>
+        <span class="pill">vamo ver um monte de lesbiscas tbm!</span>
+        <span class="pill">avião ida e volta</span>
+        <span class="pill">bairro Savassi, lugarzin legal</span>
+        <span class="pill">perto do mercado central, queijo!</span>
+      </div>
+      <div class="hero-cards">
+        <figure>
+          <img src="images/hero-pampulha.jpg"
+            alt="Igreja São Francisco de Assis, na Pampulha, com seus arcos e azulejos de Portinari">
+          <figcaption>pampulha</figcaption>
+        </figure>
+        <figure>
+          <img src="images/coreto.jpg" alt="Coreto de ferro da Praça da Liberdade entre as árvores">
+          <figcaption>praça da liberdade</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="scroll-hint">desce que tem plano ↓</p>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div>
+      <span>museus</span><span>teatros</span><span>exposições</span><span>cinema</span><span>restaurantes</span><span>praças</span><span>festinhas</span><span>pão
+        de queijo</span><span>cafeee</span>
+      <span>museus</span><span>teatros</span><span>exposições</span><span>cinema</span><span>restaurantes</span><span>praças</span><span>festinhas</span><span>pão
+        de queijo</span><span>cafeeee</span>
+    </div>
+  </div>
+
+  <section class="roteiro">
+    <div class="wrap">
+      <p class="kicker">sem ordem</p>
+      <h2>ideias pra nossa semana</h2>
+      <p class="intro">compartilhando o que eu gostaria de viver e descobrir com voce!</p>
+      <div class="dias">
+        <article class="dia reveal">
+          <p class="tag">fotografia</p>
+          <h3>registrar cada momento!</h3>
+          <p>eu ja consigo imaginar voce tirando foto de TUDO (inclusive minha)</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">café</p>
+          <h3>café com letras</h3>
+          <p>livraria, cafezin e mesinhas na savassi: a tua cara!</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">doce</p>
+          <h3>o buffet do xapuri</h3>
+          <p>mais de trinta doces mineiros pra provar. sim, trinta.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">mais cafe</p>
+          <h3>copa cozinha</h3>
+          <p>cafeteria numa casa antiga restaurada, muito linda</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">doce</p>
+          <h3>caça ao cookie</h3>
+          <p>testar as docerias e cafeterias da cidade até eleger o melhor cookie de bh.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">mercado</p>
+          <h3>manhã no mercado central</h3>
+          <p>queijo canastra, broa de fubá e café no comercial sabiá.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">veg</p>
+          <h3>almoço no san ro</h3>
+          <p>restaurante veg coladinho na savassi.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">pão de queijo</p>
+          <h3>a pão de queijaria</h3>
+          <p>uma parada obrigatória pra provar vários sabores.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">arte</p>
+          <h3>circuito da liberdade</h3>
+          <p>ccbb, praca das lesbiscas, arte moderna, museu das minas e do metal: tudo pertinho e de graca.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">arte</p>
+          <h3>igrejinha da pampulha</h3>
+          <p>niemeyer por fora e portinari nos azulejos, do ladinho da lagoa da pampulha.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">arte</p>
+          <h3>inhotim, se topar</h3>
+          <p>bate-volta de um dia pro maior museu a céu aberto das américas.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">ar livre</p>
+          <h3>pôr do sol no mangabeiras</h3>
+          <p>ver a cidade inteira acender lá de cima do mirante! (meu sonho)</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">ar livre</p>
+          <h3>parque municipal</h3>
+          <p>pedalinho no lago ou só deitar na grama no coração da cidade.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">domingo</p>
+          <h3>feira hippie</h3>
+          <p>dia 18/10 a afonso pena fecha pra gente garimpar.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">noite</p>
+          <h3>bar da cácia</h3>
+          <p>sim, tem karaoke, vc pode ate nao cantar mas seria divertido eu tentar.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">noite</p>
+          <h3>baladinha nossa</h3>
+          <p>dduck, church, lugares lgbtqiapn+.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">cinema</p>
+          <h3>cine humberto mauro</h3>
+          <p>cinema de rua no palácio das artes ou teatro, se rolar uma peça boa.</p>
+        </article>
+        <article class="dia reveal">
+          <p class="tag">preguiça</p>
+          <h3>dia de não fazer nada</h3>
+          <p>filme no hotel, coca zero gelada e nós duas grudadas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="galeria">
+    <div class="wrap">
+      <p class="kicker">pequena prévia</p>
+      <h2>lugares pra tirar um montao de foto</h2>
+      <div class="grid">
+        <figure class="reveal"><img src="images/cafe.jpg"
+            alt="Interior do Café com Letras: estantes de livros, lousa com sugestões e mesinhas">
+          <figcaption>café com letras, savassi</figcaption>
+        </figure>
+        <figure class="reveal"><img src="images/queijos.jpg"
+            alt="Queijos e provolones pendurados numa banca do Mercado Central">
+          <figcaption>mercado central: queijo pra vida</figcaption>
+        </figure>
+        <figure class="reveal"><img src="images/parque.jpg"
+            alt="Lago do Parque Municipal com coreto ao centro e palmeiras em volta">
+          <figcaption>parque municipal, bem no centro</figcaption>
+        </figure>
+        <figure class="reveal"><img src="images/azulejos.jpg"
+            alt="Azulejos de Portinari na fachada da Igrejinha da Pampulha">
+          <figcaption>portinari na igrejinha</figcaption>
+        </figure>
+        <figure class="reveal"><img src="images/mirante2.jpg"
+            alt="Deck de madeira do Mirante das Mangabeiras com vista da cidade">
+          <figcaption>mirante das mangabeiras</figcaption>
+        </figure>
+        <figure class="reveal"><img src="images/inhotim2.jpg" alt="Pavilhão de aço de Inhotim refletido no lago verde">
+          <figcaption>inhotim, se a gente topar</figcaption>
+        </figure>
+        <figure class="reveal"><img src="images/savassi.jpg"
+            alt="Mesas de café na Praça da Savassi, sombreadas por árvores">
+          <figcaption>nosso quintal: a savassi</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="detalhes">
+    <div class="wrap">
+      <p class="kicker">cuidado</p>
+      <h2>pensado em você (e em nos)</h2>
+      <ul>
+        <li class="reveal"><strong>rolês pra existir em paz</strong>
+          <p>a savassi é o point queer de bh: escolhi bar e balada onde a gente pode so existir.</p>
+        </li>
+        <li class="reveal"><strong>café sempre por perto</strong>
+          <p>minas é terra do café coado e vamos estar do lado do mercado central, entao seu estoque tá garantido o dia
+            inteiro hehe.</p>
+        </li>
+        <li class="reveal"><strong>sobremesa é prioridade</strong>
+          <p>nenhum jantar termina sem doce (eu quero muito queijo com doce de leite, deixa pfv!).</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="final">
+    <div class="wrap">
+      <h2>então, jhujuba:<br><em>o que me diz?</em> (sim, sou louca)</h2>
+      <p class="resp">me responde com um <strong>“sim”</strong>ou um <strong>“respira”</strong> se quiser ajustar</p>
+      <p class="sign">ass: sua zozo 🦇🦊</p>
+      <small>feito à mão com html, css mínimo e muito amor</small>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) {e.target.classList.add('on'); io.unobserve(e.target);}
+    }, {threshold: .15});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
